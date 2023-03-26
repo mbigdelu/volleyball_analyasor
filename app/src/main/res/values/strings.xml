@@ -4,4 +4,11 @@
     <string name="user_name">User Name :</string>
     <string name="password">Password :</string>
     <string name="todo">TODO</string>
+    <string-array name="sets">
+        <item>Select the number of sets</item>
+        <item>One set</item>
+        <item>Two out of three sets</item>
+        <item>Three out of five sets</item>
+    </string-array>
+
 </resources>
