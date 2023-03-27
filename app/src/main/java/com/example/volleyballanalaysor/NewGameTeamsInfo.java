@@ -56,6 +56,10 @@ public class NewGameTeamsInfo extends AppCompatActivity {
                 intent.putExtra("numberOfPoints", numberOfPoints);
                 intent.putExtra("teamOnePlayers", teamOnePlayers);
                 intent.putExtra("teamTwoPlayers", teamTwoPlayers);
+                intent.putExtra("teamOne", teamOne);
+                intent.putExtra("teamTwo", teamTwo);
+
+                startActivity(intent);
 
             }
         });
