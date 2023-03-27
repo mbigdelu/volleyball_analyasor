@@ -20,21 +20,42 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.sql.Array;
+
 public class NewGameInfo extends AppCompatActivity {
 
     protected int numberOfSets, numberOfPoints;
+
+
     private Spinner setsSpinner;
     private Button saveBtn;
+
     private EditText numberOfPointsIn;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_game_info);
 
+
+
+
         setsSpinner = (Spinner) findViewById(R.id.SetsSpinner) ;
+
+
         saveBtn = (Button) findViewById(R.id.newGameInfoSaveBtn);
+
+
+
         numberOfPointsIn = (EditText) findViewById(R.id.NumberOfPointsEditText);
+
+
+        Intent intent = new Intent(this, NewGameTeamsInfo.class);
+
+
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sets, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -115,5 +136,24 @@ public class NewGameInfo extends AppCompatActivity {
 
             }
         });
+
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent.putExtra("numberOfSets", numberOfSets);
+                intent.putExtra("numberOfPoints", numberOfPoints);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
+
     }
+
+
+
 }
