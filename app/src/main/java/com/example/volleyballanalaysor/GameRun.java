@@ -68,13 +68,17 @@ public class GameRun extends AppCompatActivity {
         teamOneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                addPoint(0);
+
                 if(isLastPoint()){
+
                     updateSets();
 
                 }
-                addPoint(0);
-                scoreTeamOne.setText(Integer.toString(score[0]));
-                teamOneSet.setText(Integer.toString(sets[0]));
+                else {
+
+                    updateBoard();
+                }
             }
         });
 
@@ -82,12 +86,18 @@ public class GameRun extends AppCompatActivity {
         teamTwoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isLastPoint()){
-                    updateSets();
-                }
                 addPoint(1);
-                scoreTeamTwo.setText(Integer.toString(score[1]));
-                teamTwoSet.setText(Integer.toString(sets[1]));
+
+                if(isLastPoint()){
+
+                    updateSets();
+
+                }
+                else {
+
+                    updateBoard();
+                }
+
             }
         });
 
@@ -132,9 +142,29 @@ public class GameRun extends AppCompatActivity {
         score[team]++;
     }
 
+    private void updateBoard(){
+        scoreTeamOne.setText(Integer.toString(score[0]));
+        teamOneSet.setText(Integer.toString(sets[0]));
+        scoreTeamTwo.setText(Integer.toString(score[1]));
+        teamTwoSet.setText(Integer.toString(sets[1]));
+    }
+
     private void updateSets(){
+        if(score[0] > score[1]){
+            sets[0]++;
+        }
+
+        else if (score[1] > score[0]) {
+
+            sets[1]++;
+        }
+
+
         score[0] = 0;
         score[1] = 0;
+
+        updateBoard();
+
     }
 
 
