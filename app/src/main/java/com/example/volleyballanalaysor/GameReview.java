@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class GameDone extends AppCompatActivity {
+public class GameReview extends AppCompatActivity {
 
     private SavedGame game;
     private int numberOfSets;
@@ -22,18 +22,15 @@ public class GameDone extends AppCompatActivity {
     private ConstraintLayout ScoresBox;
 
     private TextView winnerTeamText, t1s1, t1s2, t1s3, t1s4, t1s5, t2s1, t2s2, t2s3, t2s4, t2s5, noOfTipsText, noOfSpikesText, noOfBlocksText, noOfServesText, MVBText;
-    private Button saveGame, startNewGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_done);
+        setContentView(R.layout.activity_game_review);
 
         SavedGameManager savedGameManager = new SavedGameManager(this.getApplicationContext());
 
         Intent thisIntent = getIntent();
-        Intent newGame = new Intent(this, NewGameInfo.class);
-        Intent gamePage = new Intent(this, GamesPage.class);
         game = (SavedGame) thisIntent.getSerializableExtra("game");
 
 
@@ -41,8 +38,6 @@ public class GameDone extends AppCompatActivity {
 
         ScoresBox = (ConstraintLayout) findViewById(R.id.ScoresBox);
 
-        saveGame = (Button) findViewById(R.id.SaveGameBtn);
-        startNewGame = (Button) findViewById(R.id.StartANewGameBtn);
 
         winnerTeamText = (TextView) findViewById(R.id.winnerTeamText);
 
@@ -94,22 +89,6 @@ public class GameDone extends AppCompatActivity {
         t2s5.setText(scoreToString(setsScore[3][1]));
 
 
-
-        saveGame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                savedGameManager.addSavedGame(game);
-                savedGameManager.saveToFile();
-                startActivity(gamePage);
-            }
-        });
-
-        startNewGame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(newGame);
-            }
-        });
 
 
     }

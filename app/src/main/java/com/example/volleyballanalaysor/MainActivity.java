@@ -25,13 +25,13 @@ public class MainActivity extends AppCompatActivity {
 
         username = UsernameIn.getText().toString();
 
-        Intent newGame = new Intent(this, NewGameInfo.class);
+
         Intent gamesPage = new Intent(this, GamesPage.class);
 
         logInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(newGame);
+                startActivity(gamesPage);
             }
         });
     }

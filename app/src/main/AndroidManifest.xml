@@ -12,6 +12,9 @@
         android:theme="@style/Theme.VolleyballAnalaysor"
         tools:targetApi="31">
         <activity
+            android:name=".GameReview"
+            android:exported="false" />
+        <activity
             android:name=".GameDone"
             android:exported="false" />
         <activity

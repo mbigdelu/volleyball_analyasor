@@ -260,6 +260,7 @@ public class GameRun extends AppCompatActivity {
 
         Log.i("scores", Integer.toString(setsScore[0][0]));
         gameIsDone.putExtra("game", game);
+        gameIsDone.putExtra("refCode", "NEW_GAME");
         startActivity(gameIsDone);
     }
 
