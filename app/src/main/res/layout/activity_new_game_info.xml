@@ -4,32 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewGameInfo"
-    android:background="@drawable/mainphoto"
-    android:padding="5dp">
+    tools:context=".NewGameInfo">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="389dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="How many sets do you have?"
-        android:textAlignment="center"
-        android:textColor="#FF0000"
-        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/SetsSpinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintVertical_bias="0.423" />
 
     <Spinner
         android:id="@+id/SetsSpinner"
-        android:layout_width="389dp"
-        android:layout_height="93dp"
-        android:popupElevation="25dp"
-        android:textAlignment="textStart"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,24 +31,20 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="306dp"
-        android:layout_height="77dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
         android:text="Number of points in each set"
-        android:textAlignment="center"
-        android:textColor="#00655C"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SetsSpinner" />
 
     <EditText
         android:id="@+id/NumberOfPointsEditText"
-        android:layout_width="206dp"
-        android:layout_height="82dp"
+        android:layout_width="200dp"
+        android:layout_height="36dp"
         android:ems="10"
         android:inputType="number"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="@+id/textView5"
