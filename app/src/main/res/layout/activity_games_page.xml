@@ -5,19 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GamesPage"
-    >
+    android:background="@drawable/mainphoto">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
-        android:layout_width="418dp"
-        android:layout_height="733dp"
+        android:layout_width="407dp"
+        android:layout_height="540dp"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:textColor="#000000"/>
+        app:layout_constraintVertical_bias="0.024" />
 
     <Button
         android:id="@+id/newGameBtn"
